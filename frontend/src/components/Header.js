@@ -1,8 +1,10 @@
 import React from "react";
+import { Route } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { LinkContainer } from "react-router-bootstrap";
 import { Navbar, Nav, Container, NavDropdown } from "react-bootstrap";
+import SearchBox from "./SearchBox";
 import { logout } from "../actions/userActions";
 
 const Header = () => {
@@ -23,12 +25,14 @@ const Header = () => {
             ProShop
           </Navbar.Brand>
 
-          <Navbar.Toggle aria-controls="navbarScroll" />
-          <Navbar.Collapse id="navbarScroll">
+          <Navbar.Toggle aria-controls="navbarscroll" />
+          <Navbar.Collapse id="navbarscroll">
+            <Route render={({ history }) => <SearchBox history={history} />} />
+
             <Nav
               className="ml-auto "
               style={{ maxHeight: "100px" }}
-              navbarScroll
+              navbarscroll="true"
             >
               <Nav.Link as={Link} to="/cart">
                 <i className="fas fa-shopping-cart"></i> Cart
