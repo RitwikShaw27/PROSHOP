@@ -5,8 +5,11 @@ const Footer = () => {
   return (
     <footer>
       <Container>
-        <Row>
-          <Col className="text-center py-3">Copyright &copy; ProShop 2022</Col>
+        <Row className="text-center">
+          <Col className=" py-3">
+            Copyright &copy; ProShop 2022{", "}
+            <a href="mailto:shawritwik2@gmail.com">Ritwik Shaw</a>
+          </Col>
         </Row>
       </Container>
     </footer>
